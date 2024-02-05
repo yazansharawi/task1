@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Parts Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <style>
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0px;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        hr.rounded {
+            border-top: 8px solid red;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        let images = [
+            '../../public//imageOne.png',
+            '../../public//imageThree.png'
+        ];
+        let currentIndex = 0;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById('carImage').src = images[currentIndex];
+        }
+
+        setInterval(changeImage, 3000);
+        function showItemName(itemName) {
+            alert(itemName);
+        }
+        function changeBackgroundColor() {
+            let confirmChange = confirm("Would you like to change the background color?");
+            if (confirmChange) {
+                document.body.style.backgroundColor = "lightblue";
+            }
+        }
+
+        function changeImageSource() {
+            if (confirm("Would you like to change an image?")) {
+                let imageChoice = prompt("Enter the image number (1, 2, or 3) to display:");
+                switch (imageChoice) {
+                    case "1":
+                        document.getElementById('carImage').src = '../../public/imageOne.png';
+                        break;
+                    case "2":
+                        document.getElementById('carImage').src = '../../public/imageTwo.png';
+                        break;
+                    case "3":
+                        document.getElementById('carImage').src = '../../public/imageThree.png';
+                        break;
+                    default:
+                        alert("Invalid choice. No changes made.");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <nav style=" font-size: 20px; padding: 15px;display: flex;justify-content: space-between;;">
+            <ul style="display: flex;flex-direction: row;gap: 100px;">
+                <li style="margin-right: 10px;"><a href="#home">Home</a></li>
+                <li style="margin-right: 10px;"><a href="#about">About</a></li>
+                <li style="margin-right: 10px;"><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div style="display: flex;    gap: 10px;flex-direction: row;">
+                <button onclick="changeBackgroundColor()">Change Background Color</button>
+                <button onclick="changeImageSource()">Change Image Source</button>
+            </div>
+        </nav>
+        <div style="display: flex; justify-content: center;">
+            <img src="../../public//imageOne.png" id="carImage" alt="Car Part" style="max-width: 100%; height: auto;">
+        </div>
+        <div style="padding:20px;">
+            <div style="display: flex;font-size: 50px;padding-bottom: 40px;">
+                Parts
+            </div>
+            <div class="itemsDiv">
+                <div class="card" onclick="showItemName('Batteries')">
+                    <img src="../../public//imageFour.png" id="carImage" alt="Car Part"
+                        style="max-width: 200px; height: 170px;  border-radius: 10px;">
+                    <div style="display: flex;justify-content: center;">Batteries</div>
+                </div>
+                <div class="card" onclick="showItemName('Brake Pads')">
+                    <img src="../../public//imageFive.png" id="carImage" alt="Car Part"
+                        style="max-width: 200px; height: 170px;  border-radius: 10px;">
+                    <div style="display: flex;justify-content: center;">Brake Pads</div>
+                </div>
+                <div class="card" onclick="showItemName('Brake Rotors')">
+                    <img src="../../public//imageSix.png" id="carImage" alt="Car Part"
+                        style="max-width: 200px; height: 170px;  border-radius: 10px;">
+                    <div style="display: flex;justify-content: center;">Brake Rotors</div>
+                </div>
+            </div>
+        </div>
+        <footer style="border-top: 2px solid;">
+            <p style="display: flex;flex-direction: row;gap: 150px; justify-content: center;">Author: Hege Refsnes<br>
+                <a href="mailto:hege@example.com">hege@example.com</a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
