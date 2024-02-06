@@ -17,3 +17,15 @@
     flex-direction: row;
     gap: 90px;
 }
+
+@media (max-width: 768px) {
+    .card{
+        width: 150px;
+        height: 180px;
+    }
+    .itemsDiv {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+}

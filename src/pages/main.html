@@ -8,6 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
     <style>
+        .navItems {
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+        }
+
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -35,6 +41,75 @@
         hr.rounded {
             border-top: 8px solid red;
             border-radius: 5px;
+        }
+
+        .footerTags {
+            display: flex;
+            flex-direction: row;
+            gap: 150px;
+            justify-content: center;
+        }
+
+
+        .partsHeader {
+            display: flex;
+            font-size: 50px;
+            padding-bottom: 40px;
+        }
+
+        .partsImage {
+            max-width: 200px;
+            height: 170px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .navItems {
+                gap: 20px;
+            }
+
+            .partsImage {
+                max-width: 150px;
+                height: 150px;
+            }
+
+            .footerTags {
+                gap: 100px
+            }
+
+            .partsHeader {
+                justify-content: center;
+                font-size: 40px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            nav ul li {
+                display: block;
+                margin-right: 0;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul,
+            nav div {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                font-size: 16px;
+            }
         }
     </style>
     <script>
@@ -84,7 +159,7 @@
 <body>
     <div class="main">
         <nav style=" font-size: 20px; padding: 15px;display: flex;justify-content: space-between;;">
-            <ul style="display: flex;flex-direction: row;gap: 100px;">
+            <ul class="navItems">
                 <li style="margin-right: 10px;"><a href="#home">Home</a></li>
                 <li style="margin-right: 10px;"><a href="#about">About</a></li>
                 <li style="margin-right: 10px;"><a href="#services">Services</a></li>
@@ -99,29 +174,26 @@
             <img src="../../public//imageOne.png" id="carImage" alt="Car Part" style="max-width: 100%; height: auto;">
         </div>
         <div style="padding:20px;">
-            <div style="display: flex;font-size: 50px;padding-bottom: 40px;">
+            <div class="partsHeader">
                 Parts
             </div>
             <div class="itemsDiv">
                 <div class="card" onclick="showItemName('Batteries')">
-                    <img src="../../public//imageFour.png" id="carImage" alt="Car Part"
-                        style="max-width: 200px; height: 170px;  border-radius: 10px;">
+                    <img src="../../public//imageFour.png" id="carImage" alt="Car Part" class="partsImage">
                     <div style="display: flex;justify-content: center;">Batteries</div>
                 </div>
                 <div class="card" onclick="showItemName('Brake Pads')">
-                    <img src="../../public//imageFive.png" id="carImage" alt="Car Part"
-                        style="max-width: 200px; height: 170px;  border-radius: 10px;">
+                    <img src="../../public//imageFive.png" id="carImage" alt="Car Part" class="partsImage">
                     <div style="display: flex;justify-content: center;">Brake Pads</div>
                 </div>
                 <div class="card" onclick="showItemName('Brake Rotors')">
-                    <img src="../../public//imageSix.png" id="carImage" alt="Car Part"
-                        style="max-width: 200px; height: 170px;  border-radius: 10px;">
+                    <img src="../../public//imageSix.png" id="carImage" alt="Car Part" class="partsImage">
                     <div style="display: flex;justify-content: center;">Brake Rotors</div>
                 </div>
             </div>
         </div>
         <footer style="border-top: 2px solid;">
-            <p style="display: flex;flex-direction: row;gap: 150px; justify-content: center;">Author: Hege Refsnes<br>
+            <p class="footerTags">Author: Hege Refsnes<br>
                 <a href="mailto:hege@example.com">hege@example.com</a>
             </p>
         </footer>
